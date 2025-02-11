@@ -1,5 +1,7 @@
+import { Button } from "./components/ui/button";
+
 function App() {
-  return <div>React App</div>;
+  return <Button>React App</Button>;
 }
 
 export default App;
