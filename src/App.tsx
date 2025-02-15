@@ -10,16 +10,26 @@ import {
 } from "./components/ui/card";
 import { Input } from "./components/ui/input";
 import { MEALS } from "./data/meals";
+import { Button } from "./components/ui/button";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState<typeof MEALS>([]);
 
-  const filteredMeals = MEALS.filter(
-    (meal) =>
-      meal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      meal.dsc.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      meal.country.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const filteredMeals =
+      searchTerm !== ""
+        ? MEALS.filter(
+            (meal) =>
+              meal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              meal.dsc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              meal.country.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+        : [];
+
+    setSearchResults(filteredMeals);
+  };
 
   const StarRating = ({ rating }: { rating: number }) => {
     return (
@@ -39,24 +49,30 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <form className="container mx-auto p-6" onSubmit={handleSearch}>
       {/* Search Section */}
-      <div className="mb-8">
+      <div className="mb-8 w-[500px] max-w-full mx-auto">
         <div className="relative">
-          <Search className="absolute left-3 top-2 h-5 w-5 text-gray-400" />
+          <Search className="absolute left-3 top-[50%] -translate-y-[50%] h-5 w-5 text-gray-400" />
           <Input
             type="text"
             placeholder="Search for meals, restaurants, or locations..."
-            className="pl-10 w-full"
+            className="pl-10 w-full h-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <Button
+            type="submit"
+            className="absolute right-1 top-[50%] -translate-y-[50%] h-8"
+          >
+            Search
+          </Button>
         </div>
       </div>
 
       {/* Meals Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredMeals.map((meal) => (
+        {searchResults.map((meal) => (
           <Card
             key={meal.id}
             className="overflow-hidden hover:shadow-lg transition-shadow"
@@ -94,14 +110,14 @@ const App = () => {
       </div>
 
       {/* No Results Message */}
-      {filteredMeals.length === 0 && (
+      {searchResults.length === 0 && (
         <div className="text-center py-10">
           <p className="text-gray-500 text-lg">
             No meals found matching your search.
           </p>
         </div>
       )}
-    </div>
+    </form>
   );
 };
 
