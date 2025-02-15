@@ -1,24 +1,6 @@
 export const MEALS = [
   // BBQ
   {
-    id: "ribs-brisket-and-burnt-ends",
-    img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/79619/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-    name: "Joe's KC BBQ",
-    dsc: "Joe's KC Ribs, Brisket & Burnt Ends",
-    price: 110.99,
-    rate: 4,
-    country: "Kansas City, KS",
-  },
-  {
-    id: "005-kings-carolina-oink-sampler",
-    img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/66752/carolina-bbq-oink-sampler.1340b5a10cedc238cb2280306dd1d5a5.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-    name: "Kings BBQ",
-    dsc: "Carolina BBQ Oink Sampler",
-    price: 89,
-    rate: 4,
-    country: "Kinston, NC",
-  },
-  {
     id: "texas-monthlys-1-bbq-brisket",
     img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/131249/texas-monthlys-1-bbq-brisket.1006a061be7acae03992e420fbca995a.png?ixlib=react-9.0.2&auto=format&ar=1%3A1",
     name: "Snow's BBQ",
@@ -150,15 +132,6 @@ export const MEALS = [
 
   // FRIED CHICKEN
 
-  {
-    id: "the-coop-complete-fried-chicken-dinner-for-4",
-    img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/134235/complete-fried-chicken-dinner-for-4.aeabf841c124b9cc2fb0166f27790999.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-    name: "Blue Ribbon",
-    dsc: '"The Coop" Complete Fried Chicken Dinner for 4',
-    price: 119,
-    rate: 5,
-    country: "New York, NY",
-  },
   {
     id: "hot-chicken-whole-bird",
     img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/110733/hot-chicken-whole-bird.bfd696b1cf611210ee813293c4c1bf28.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",

@@ -19,18 +19,19 @@ const App = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (searchTerm.trim() === "") {
+      return;
+    }
+
     setLoading(true);
 
-    const filteredMeals =
-      searchTerm !== ""
-        ? MEALS.filter(
-            (meal) =>
-              meal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              meal.dsc.toLowerCase().includes(searchTerm.toLowerCase()) ||
-              meal.country.toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        : [];
-
+    const filteredMeals = MEALS.filter(
+      (meal) =>
+        meal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        meal.dsc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        meal.country.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     setSearchResults(filteredMeals);
     setLoading(false);
   };
