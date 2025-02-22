@@ -337,15 +337,6 @@ export const MEALS = [
     country: "San Rafael, CA",
   },
   {
-    id: "california-reserve-ribeye-steaks-gift-box",
-    img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/132850/california-reserve-ribeye-steaks-gift-box.87b8f6acf5851abe58778d3017105edc.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
-    name: "Flannery Beef",
-    dsc: "California Reserve Ribeye Steaks Gift Box",
-    price: 99,
-    rate: 4,
-    country: "San Rafael, CA",
-  },
-  {
     id: "steaks-and-cakes-date-night-dinner-for-2",
     img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/118617/valentines-steaks-and-cakes-dinner-for-2.0c63dab635eed46209455dc33cd25ea8.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
     name: "Chesapeake Bay Gourmet",
