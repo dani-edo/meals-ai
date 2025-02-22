@@ -1,5 +1,6 @@
 import { LoaderPinwheel, Search } from "lucide-react";
 import { useState } from "react";
+
 import { Badge } from "./components/ui/badge";
 import {
   Card,
@@ -9,8 +10,10 @@ import {
   CardTitle,
 } from "./components/ui/card";
 import { Input } from "./components/ui/input";
-import { MEALS } from "./data/meals";
 import { Button } from "./components/ui/button";
+import StarRating from "./components/StarRating";
+
+import { MEALS } from "./data/meals";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,23 +36,6 @@ const App = () => {
     );
     setSearchResults(filteredMeals);
     setLoading(false);
-  };
-
-  const StarRating = ({ rating }: { rating: number }) => {
-    return (
-      <div className="flex gap-1">
-        {[...Array(5)].map((_, index) => (
-          <span
-            key={index}
-            className={`text-lg ${
-              index < rating ? "text-yellow-400" : "text-gray-300"
-            }`}
-          >
-            ★
-          </span>
-        ))}
-      </div>
-    );
   };
 
   return (
